@@ -1,0 +1,96 @@
+---
+title: "Week02Prj01RM1"
+author: "Chirag S"
+date: "8/31/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(haven)
+library(psych)
+library(here)
+
+
+```
+
+Reading Data
+Naming data > can use of Camel (xAcC) vs Snake case (x_A_cC)
+We have a Stata file so we use the 'haven' package to read it.
+
+```{r}
+
+Week02Prj1RM1F1D1 <- haven::read_dta("tech_co_cstat_dta.zip") # :: reads a stata file comes from haven package
+
+```
+
+Understanding the Class
+
+```{r}
+class(Week02Prj1RM1F1D1)
+
+```
+Understanding Data Frame
+
+```{r}
+
+names(Week02Prj1RM1F1D1)
+
+```
+Understanding Data Set
+head shows the first 6 rows
+
+```{r}
+head(Week02Prj1RM1F1D1, n = 10)
+
+```
+
+Tail shows the last 6 rows of the data set
+
+```{r}
+tail(Week02Prj1RM1F1D1, n = 15)
+```
+
+
+Head function with specific data
+
+```{r}
+Week02Prj1RM1F1D1[50:65]
+```
+
+
+how to look at metadata of a variable
+for a specific attribute, select $ sign. 
+
+```{r}
+attributes(Week02Prj1RM1F1D1$datadate)
+
+```
+
+how to rewrite an attribute label with more descriptive
+
+```{r}
+attributes(Week02Prj1RM1F1D1$datadate)$label <- "Fiscal Year End Date"
+
+```
+
+Now check the modified name of the attribute
+
+```{r}
+attributes(Week02Prj1RM1F1D1$datadate)
+```
+
+how to remove attribute
+
+```{r}
+attributes(Week02Prj1RM1F1D1$datadate)$label <- NULL
+```
+
+NOW CHECK THE REMOVED VALUE. 
+
+```{r}
+attributes(Week02Prj1RM1F1D1$datadate)
+```
+
