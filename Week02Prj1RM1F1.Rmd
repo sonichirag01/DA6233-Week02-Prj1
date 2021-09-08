@@ -268,3 +268,29 @@ d8 %>%
   head(20)
 ```
 
+```{r}
+
+
+d7 %>% 
+  select(sale) %>% 
+  summarize(sale_mean = mean(sale),
+            sales_median = median(sale),
+            sale_sd = sd(sale))
+```
+```{r}
+
+d7 %>% 
+  select(sale, at, xrd) %>% 
+  summarize(across(everything(), mean))
+
+```
+
+```{r}
+
+d7 %>% 
+  group_by(conm) %>% 
+  summarize(sale_mean = mean(sale),
+            sales_median = median(sale),
+            sale_sd = sd(sale))
+```
+
