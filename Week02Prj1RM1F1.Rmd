@@ -191,10 +191,6 @@ d5 <- Week02Prj1RM1F1D1 %>%
 ```
 TO TURN OFF THE CODE AND OUTPUT 
 
-```{r echo = CODE, eval=FALSE} 
-
-
-```
 
 ### Mutate()
 
@@ -291,6 +287,7 @@ d7 %>%
   group_by(conm) %>% 
   summarize(sale_mean = mean(sale),
             sales_median = median(sale),
-            sale_sd = sd(sale))
+            sale_sd = sd(sale)) %>% 
+ as.data.frame ()
 ```
 
