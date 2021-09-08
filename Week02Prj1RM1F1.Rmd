@@ -296,3 +296,16 @@ d7 %>%
  as.data.frame ()
 ```
 
+
+```{r}
+
+d5 %>% 
+  mutate(first_half_decade = ifelse(fyear <2015, 1, 0)) %>% 
+  group_by (conm, first_half_decade) %>% 
+   summarize(sale_mean = mean(sale),
+            sales_median = median(sale),
+            sale_sd = sd(sale)) %>% 
+  as.data.frame ()
+  
+```
+
