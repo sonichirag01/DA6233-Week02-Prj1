@@ -93,6 +93,11 @@ NOW CHECK THE REMOVED VALUE.
 ```{r}
 attributes(Week02Prj1RM1F1D1$datadate)
 ```
+
+----------------------------
+09/07/2021 Class Exercises
+----------------------------
+
 ```{r}
 glimpse(Week02Prj1RM1F1D1)
 
